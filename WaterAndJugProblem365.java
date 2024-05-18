@@ -49,6 +49,29 @@ public class WaterAndJugProblem365 {
   }
 
 
+  public boolean canMeasureWaterMath(int x, int y, int z) {
+    if (x + y < z) return false;
+    if (x == z || y == z || x +y == z) return true;
+
+    //get GCD, then we can use the property of Bézout's identity
+
+    return z % GCD(x,y) == 0;
+  }
+
+  public  int GCD(int a, int b) {
+      while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+      }
+
+      return  a;
+  }
+
+
+
+
+
 
   public static void main(String[] args) {
     WaterAndJugProblem365 wjp = new WaterAndJugProblem365();
@@ -56,5 +79,6 @@ public class WaterAndJugProblem365 {
     System.out.println(wjp.canMeasureWater(4, 6, 8));
     System.out.println(wjp.canMeasureWater(1, 2, 3));
     System.out.println(wjp.canMeasureWater(2, 6, 5));
+    System.out.println(wjp.canMeasureWaterMath(2, 6, 5));
   }
 }
