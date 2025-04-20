@@ -18,6 +18,10 @@ public class Main {
       for (int i = 0; i < a.length; i++) {
         
       }
+      // ExecutorService service = new ThreadPoolExecutor(10,20)
     }
+  }
+  public void method2(int a, int b){
+    System.out.println(a);
   }
 }
